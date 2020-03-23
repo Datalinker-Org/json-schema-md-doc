@@ -146,7 +146,7 @@ class JSONSchemaMarkdown {
         this.writeHeader(data.title, level, path);
         this.writeDescription(data.dldescription, level, path);
         this.writeType(data.type, level, path);
-        this.writePath(level, path);
+      
         this.writeSchema(data["$schema"], level);
         this.writeRef(data["$ref"], level, path);
         this.writeId(data["$id"], level, path);
@@ -549,11 +549,11 @@ class JSONSchemaMarkdown {
      * @param {String} path String describing the path of the property
      * 
      */
-   /**writePath(level, path) {
-     *   if (this.notEmpty(path)) {
-     *       this.writeLine('<i id="' + path + '">path: ' + path + '</i>', level);
-     *  }
-    }*/
+   writePath(level, path) {
+        if (this.notEmpty(path)) {
+            this.writeLine('<i id="' + path + '">path: ' + path + '</i>', level);
+       }
+    }
 
     /**
      * Writes the declared schema URI
