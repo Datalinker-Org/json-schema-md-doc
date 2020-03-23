@@ -237,7 +237,7 @@ class JSONSchemaMarkdown {
      * @param {String} path String describing the path of the property
      */
     typeString(name, data, level, path) {
-        this.writeFormat(data.format, level);
+       /* this.writeFormat(data.format, level);*/
         this.writePattern(data.pattern, level);
         if (this.notEmpty(data.minLength) || this.notEmpty(data.maxLength)) {
             this.indent(level);
