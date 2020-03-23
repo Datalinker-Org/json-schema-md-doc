@@ -155,6 +155,7 @@ class JSONSchemaMarkdown {
         this.writeEnum(data.enum, level);
         this.writeDefault(data.default, level, path);
         this.writeId(data["@id"], level, path);
+        this.writeItems(data.items);
     }
 
     /**
@@ -309,6 +310,8 @@ class JSONSchemaMarkdown {
             }
         }
     }
+    
+    writeItems(data) { }
 
     /**
      * @see https://json-schema.org/understanding-json-schema/reference/object.html#property-names
