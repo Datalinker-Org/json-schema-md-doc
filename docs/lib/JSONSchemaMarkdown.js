@@ -257,7 +257,7 @@ class JSONSchemaMarkdown {
     typeObject(name, data, level, path) {
         const required = (this.empty(data.required)) ? [] : data.required;
         if (this.empty(data.properties) && (data !== "items")) {
-            throw "`object` missing properties at " + path + data;
+            throw "`object` missing properties at " + path + name;
         }
         this.writeAdditionalProperties(data.additionalProperties, level);
 
