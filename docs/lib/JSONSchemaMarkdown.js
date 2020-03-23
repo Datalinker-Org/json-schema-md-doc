@@ -155,8 +155,7 @@ class JSONSchemaMarkdown {
         this.writeEnum(data.enum, level);
         this.writeDefault(data.default, level, path);
         this.writeId(data["@id"], level, path);
-        this.writeItems(data.items);
-    }
+       }
 
     /**
      * 
@@ -165,7 +164,7 @@ class JSONSchemaMarkdown {
      * @param {integer} level Indentation level
      * @param {String} path String describing the path of the property
      */
-    typeArray(name, data, level, path) {
+   /** typeArray(name, data, level, path) {
         this.writeAdditionalItems(data.additionalItems);
         if (this.notEmpty(data.minItems) || this.notEmpty(data.maxItems)) {
             this.indent(level);
@@ -185,7 +184,7 @@ class JSONSchemaMarkdown {
                 this.generateChildren('item', data.items, level + 1, path + "/items");
             }
         }
-    }
+    }*/
 
     /**
      * 
@@ -311,8 +310,6 @@ class JSONSchemaMarkdown {
         }
     }
     
-    writeItems(data) { }
-
     /**
      * @see https://json-schema.org/understanding-json-schema/reference/object.html#property-names
      * @param {boolean} bool
