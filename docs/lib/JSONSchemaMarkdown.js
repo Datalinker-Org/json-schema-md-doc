@@ -144,7 +144,7 @@ class JSONSchemaMarkdown {
      */
     typeGeneric(name, data, level, path) {
         this.writeHeader(data.title, level, path);
-        this.writeDescription(data.description, level, path);
+        this.writeDescription(data.dldescription, level, path);
         this.writeType(data.type, level, path);
         this.writePath(level, path);
         this.writeSchema(data["$schema"], level);
@@ -256,7 +256,7 @@ class JSONSchemaMarkdown {
     typeObject(name, data, level, path) {
         const required = (this.empty(data.required)) ? [] : data.required;
         if (this.empty(data.properties)) {
-            throw "`object` missing properties at test " + path;
+            throw "`object` missing properties at " + path;
         }
         this.writeAdditionalProperties(data.additionalProperties, level);
 
