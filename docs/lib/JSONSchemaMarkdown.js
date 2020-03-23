@@ -549,11 +549,11 @@ class JSONSchemaMarkdown {
      * @param {String} path String describing the path of the property
      * 
      */
-    writePath(level, path) {
-        if (this.notEmpty(path)) {
-            this.writeLine('<i id="' + path + '">path: ' + path + '</i>', level);
-        }
-    }
+   /**writePath(level, path) {
+     *   if (this.notEmpty(path)) {
+     *       this.writeLine('<i id="' + path + '">path: ' + path + '</i>', level);
+     *  }
+    }*/
 
     /**
      * Writes the declared schema URI
