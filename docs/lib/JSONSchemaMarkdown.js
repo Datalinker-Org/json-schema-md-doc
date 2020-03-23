@@ -256,7 +256,7 @@ class JSONSchemaMarkdown {
     typeObject(name, data, level, path) {
         const required = (this.empty(data.required)) ? [] : data.required;
         if (this.empty(data.properties)) {
-            throw "`object` missing properties at " + path;
+            throw "`object` missing properties at test " + path;
         }
         this.writeAdditionalProperties(data.additionalProperties, level);
 
@@ -719,7 +719,7 @@ class JSONSchemaMarkdown {
     slugify(string) {
         return string.toString().toLowerCase()
                 .replace(/\s+/g, '-') // Replace spaces with -
-                .replace(/&/g, '-and-') // Replace & with ‘and’
+                .replace(/&/g, '-and-') // Replace & with Â‘andÂ’
                 .replace(/[^\w-.]+/g, '') // Remove all non-word characters
                 .replace(/--+/g, '-') // Replace multiple - with single -
                 .replace(/^-+/, '') // Trim - from start of text
