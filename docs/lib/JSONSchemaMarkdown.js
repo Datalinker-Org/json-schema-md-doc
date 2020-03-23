@@ -424,7 +424,7 @@ class JSONSchemaMarkdown {
      */
     writeId(id, level) {
         if (this.notEmpty(id)) {
-            this.writeLine('<b id="' + this.slugify(id) + '">&#36;id: ' + id + "</b>", level);
+            this.writeLine('<b id="' + this.slugify(id) + '">' + id + "</b>", level);
         }
     }
 
