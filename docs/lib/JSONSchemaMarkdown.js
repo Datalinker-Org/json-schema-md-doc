@@ -596,7 +596,7 @@ class JSONSchemaMarkdown {
                 this.writeLine("Type: `" + type + "`", level);
             }
         }
-        this.writeId(data["@id"], level, path);
+      
     }
 
     /**
