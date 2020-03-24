@@ -594,7 +594,7 @@ class JSONSchemaMarkdown {
                 this.writeLine("Types: `" + type.join('`, `') + "`", level);
             } else {
                 if (level > 0) {
-                this.writeLine("**Type:* `" + type + "`", level);
+                this.writeLine("**Type:** `" + type + "`", level);
                 }
             }
         }
