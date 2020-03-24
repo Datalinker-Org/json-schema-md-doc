@@ -185,8 +185,8 @@ class JSONSchemaMarkdown {
                 //Normal Validation
                 this.generateChildren('item', data.items, level + 1, path + "/items");
             }
-        }*/
-    }
+        }
+    }*/
 
     /**
      * 
