@@ -593,7 +593,9 @@ class JSONSchemaMarkdown {
             if (Array.isArray(type) && type.length > 1) {
                 this.writeLine("Types: `" + type.join('`, `') + "`", level);
             } else {
+                if (level !== 1) {
                 this.writeLine("Type: `" + type + "`", level);
+                }
             }
         }
       
