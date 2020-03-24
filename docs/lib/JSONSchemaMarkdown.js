@@ -238,7 +238,7 @@ class JSONSchemaMarkdown {
      * @param {String} path String describing the path of the property
      */
     typeString(name, data, level, path) {
-       this.writeFormat(data.format, level);
+       /*this.writeFormat(data.format, level);*/
         this.writePattern(data.pattern, level);
         if (this.notEmpty(data.minLength) || this.notEmpty(data.maxLength)) {
             this.indent(level);
@@ -387,8 +387,7 @@ class JSONSchemaMarkdown {
      */
     writeFormat(format, level) {
         if (this.notEmpty(format)) {
-             this.writeId(data["$id"], level);
-           /* this.writeLine('String format must be a "' + format + '"', level);*/
+             this.writeLine('String format must be a "' + format + '"', level);
         }
     }
 
