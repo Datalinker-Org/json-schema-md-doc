@@ -165,9 +165,8 @@ class JSONSchemaMarkdown {
      * @param {integer} level Indentation level
      * @param {String} path String describing the path of the property
      */
-   typeArray(name, data, level, path) {
-       this.writeId(data["$id"], level, path);
-       /*
+   /*typeArray(name, data, level, path) {
+          
         this.writeAdditionalItems(data.additionalItems);
         if (this.notEmpty(data.minItems) || this.notEmpty(data.maxItems)) {
             this.indent(level);
@@ -597,6 +596,7 @@ class JSONSchemaMarkdown {
                 this.writeLine("Type: `" + type + "`", level);
             }
         }
+        this.writeId(data["@id"], level, path);
     }
 
     /**
