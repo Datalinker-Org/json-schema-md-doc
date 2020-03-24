@@ -147,7 +147,7 @@ class JSONSchemaMarkdown {
         this.writeDescription(data.dldescription, level, path);
         this.writeType(data.type, level, path);
       
-        this.writeSchema(data["$schema"], level);
+        /*this.writeSchema(data["$schema"], level);*/
         this.writeRef(data["$ref"], level, path);
         this.writeId(data["$id"], level, path);
         this.writeComment(data["$comment"], level, path);
