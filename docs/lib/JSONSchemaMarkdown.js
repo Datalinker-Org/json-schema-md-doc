@@ -166,7 +166,7 @@ class JSONSchemaMarkdown {
      * @param {String} path String describing the path of the property
      */
    typeArray(name, data, level, path) {
-       this.writeId(data["@id"], level, path)
+       this.writeId(data["$id"], level, path);
        /*
         this.writeAdditionalItems(data.additionalItems);
         if (this.notEmpty(data.minItems) || this.notEmpty(data.maxItems)) {
