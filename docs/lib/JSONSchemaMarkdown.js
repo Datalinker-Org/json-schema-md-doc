@@ -154,7 +154,7 @@ class JSONSchemaMarkdown {
         this.writeExamples(data.examples, level, path);
         this.writeEnum(data.enum, level);
         this.writeDefault(data.default, level, path);
-        this.writeId(data["@id"], level, path);
+        /*this.writeId(data["@id"], level, path);*/
         this.writeId(data.dltype, level, path);
        }
 
