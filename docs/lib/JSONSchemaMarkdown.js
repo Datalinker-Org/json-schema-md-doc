@@ -363,7 +363,7 @@ class JSONSchemaMarkdown {
      */
     writeDescription(description, level) {
         if (this.notEmpty(description)) {
-            this.writeLine("_" + " Description: " + description.replace("\n", "<br>") + "_", level);
+            this.writeLine("**Description:** " + description.replace("\n", "<br>"), level);
         }
     }
 
@@ -594,7 +594,7 @@ class JSONSchemaMarkdown {
                 this.writeLine("Types: `" + type.join('`, `') + "`", level);
             } else {
                 if (level > 0) {
-                this.writeLine("Type: `" + type + "`", level);
+                this.writeLine("**Type:* `" + type + "`", level);
                 }
             }
         }
