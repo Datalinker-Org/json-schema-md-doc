@@ -363,7 +363,7 @@ class JSONSchemaMarkdown {
      */
     writeDescription(description, level) {
         if (this.notEmpty(description)) {
-            this.writeLine("_" + description.replace("\n", "<br>") + "_", level);
+            this.writeLine("_" + " Description: " + description.replace("\n", "<br>") + "_", level);
         }
     }
 
@@ -426,7 +426,7 @@ class JSONSchemaMarkdown {
      */
     writeId(id, level) {
         if (this.notEmpty(id)) {
-            this.writeLine('<b id="' + this.slugify(id) + '">' + id + "</b>", level);
+            this.writeLine('<b id="' + this.slugify(id) + '">' + "Link to sub-property: " + id + "</b>", level);
         }
     }
 
