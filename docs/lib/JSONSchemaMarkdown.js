@@ -256,9 +256,9 @@ class JSONSchemaMarkdown {
      * @param {integer} level Indentation level
      * @param {String} path String describing the path of the property
      */
-    typeObject(name, data, level, path) {
+    /*typeObject(name, data, level, path) {
         const required = (this.empty(data.required)) ? [] : data.required;
-        if (this.empty(data.properties) && (name !== "item")) {
+        if (this.empty(data.properties)) {
             throw "`object` missing properties at " + path + name;
         }
         this.writeAdditionalProperties(data.additionalProperties, level);
@@ -280,7 +280,7 @@ class JSONSchemaMarkdown {
             this.generateChildren(propName, property, level + 2, propPath);
         }
     }
-
+*/
     /**
      * This method is a catch for schema types that aren't recongized.
      * You may want to treat anything resolving to this method as an error.
