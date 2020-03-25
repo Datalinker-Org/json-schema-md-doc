@@ -637,8 +637,8 @@ class JSONSchemaMarkdown {
             case "integer":
             case "number":
                 return this.typeNumber.bind(this);
-            case "object":
-                return this.typeObject.bind(this);
+            /*case "object":
+                return this.typeObject.bind(this);*/
             /*case "array":
                 return this.typeArray.bind(this);*/
             case "boolean":
