@@ -270,7 +270,7 @@ class JSONSchemaMarkdown {
         }
 
         this.writePropertyNames(data.propertyNames, level);
-        this.writeSectionName("Properties", level, path);
+        /*this.writeSectionName("Properties", level, path);*/
         path += "/properties";
         for (var propName in data.properties) {
             var propPath = path + this.pathDivider + propName;
