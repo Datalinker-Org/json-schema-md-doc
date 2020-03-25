@@ -155,7 +155,7 @@ class JSONSchemaMarkdown {
         this.writeEnum(data.enum, level);
         this.writeDefault(data.default, level, path);
         this.writeId(data["@id"], level, path);
-        this.writeId(data.dltype, level, path);
+        this.writeDl(data.dltype, level, path);
        }
 
     /**
@@ -426,9 +426,15 @@ class JSONSchemaMarkdown {
      */
     writeId(id, level) {
         if (this.notEmpty(id)) {
-            this.writeLine('<b id="' + this.slugify(id) + '">' + "Link to sub-property: " + id + "</b>", level);
+            this.writeLine('<b id="' + this.slugify(id) + '">' + "Link to property: " + id + "</b>", level);
         }
     }
+     writeDl(dl, level) {
+        if (this.notEmpty(id)) {
+            this.writeLine('<b id="' + this.slugify(id) + '">' + "Link to schema: " + id + "</b>", level);
+        }
+    }
+    
 
     /**
      * Write array as markdown list
