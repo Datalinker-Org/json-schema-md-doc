@@ -430,8 +430,8 @@ class JSONSchemaMarkdown {
         }
     }
      writeDl(dl, level) {
-        if (this.notEmpty(id)) {
-            this.writeLine('<b id="' + this.slugify(id) + '">' + "Link to schema: " + id + "</b>", level);
+        if (this.notEmpty(dl)) {
+            this.writeLine('<b id="' + this.slugify(dl) + '">' + "Link to schema: " + dl + "</b>", level);
         }
     }
     
