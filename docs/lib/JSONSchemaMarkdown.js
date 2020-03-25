@@ -582,11 +582,11 @@ class JSONSchemaMarkdown {
      * @param {Integer} level Indentation level
      * 
      */
-    writeSectionName(name, level = 1) {
+   /* writeSectionName(name, level = 1) {
         if (this.notEmpty(name)) {
             this.writeLine('**_' + name + "_**", level);
     }
-    }
+    }*/
 
     /**
      * @see https://json-schema.org/understanding-json-schema/basics.html#the-type-keyword
