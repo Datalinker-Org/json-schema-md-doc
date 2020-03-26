@@ -429,7 +429,7 @@ class JSONSchemaMarkdown {
             this.writeLine('<b id="' + this.slugify(id) + '">' + "Link to property: " + id + "</b>", level);
         }
     }
-}
+
 
      writeDl(dl, level) {
         if (this.notEmpty(dl)) {
