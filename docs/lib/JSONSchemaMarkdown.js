@@ -425,10 +425,13 @@ class JSONSchemaMarkdown {
      * 
      */
     writeId(id, level) {
-        if (this.notEmpty(id)) {
+        if (this.notEmpty(id) {
+            if (id.includes("#") {}
+        else {
             this.writeLine('<b id="' + this.slugify(id) + '">' + "Link to property: " + id + "</b>", level);
         }
     }
+}
 
      writeDl(dl, level) {
         if (this.notEmpty(dl)) {
