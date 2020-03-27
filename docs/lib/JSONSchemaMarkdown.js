@@ -428,7 +428,7 @@ class JSONSchemaMarkdown {
         if (this.notEmpty(id)) {
             if (id.includes("#")) {}
                 else {
-            this.writeLine('<b id="' + this.slugify(id) + '">' + "Link to property: " + id + "</b>", level);
+            this.writeLine('<b id="' + this.slugify(id) + '">' + "Link to schema: " + id + "</b>", level);
         }}
     }
 
