@@ -19,6 +19,8 @@
   "homepage": "https://brianwendt.github.io/json-schema-md-doc",
   "public": true,
   "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1",
     "docdash": "^1.1.0",
     "jsdoc": "^3.5.5"
   },

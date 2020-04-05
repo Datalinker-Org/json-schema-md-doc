@@ -1,13 +1,7 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Create MD Files'
+description: 'Read in the JSON schema files and generate MD documentation files for the schema'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'node12'
   main: 'index.js'
