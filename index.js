@@ -10,7 +10,7 @@ try {
 
 async function runMDGeneration(){
   // Creates to globber to search through the repository for the JSON files
-  const patterns = ['**/*.json', '!**/node_modules/**/*.json'];
+  const patterns = ['**/*.json', '!**/node_modules/**/*.json', '!**/package*.json', '!**/schema.json', '!**/jsdoc_config.json'];
   const globber = await glob.create(patterns.join('\n'));
 
   var fileList = [];
