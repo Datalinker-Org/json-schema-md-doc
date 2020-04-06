@@ -1,5 +1,8 @@
 name: 'Create MD Files'
 description: 'Read in the JSON schema files and generate MD documentation files for the schema'
+outputs:
+  files:
+    description: 'The list of found JSON files'
 runs:
   using: 'node12'
   main: 'index.js'

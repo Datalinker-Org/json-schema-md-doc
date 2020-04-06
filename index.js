@@ -13,10 +13,14 @@ async function runMDGeneration(){
   const patterns = ['**/json'];
   const globber = await glob.create(patterns.join('\n'));
 
+  var fileList = [];
+
   // hopefully if this works right should iterate of the list of all the JSON files in the repository
   for await (const file of globber.globGenerator()){
-    console.log(file);
+    fileList.push(file);
   }
+
+  core.setOutput("files", fileList.join('\n'))
 
   // TODO: Save the MD files from the generator
 }
