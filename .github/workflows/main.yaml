@@ -11,3 +11,6 @@ jobs:
       - name: Generate MD files Step
         uses: ./ # Uses an action in the root directory
         id: hello
+      # Use the output from the `hello` step
+      - name: Get the list of files
+        run: echo "The files are ${{ steps.hello.outputs.files }}"
