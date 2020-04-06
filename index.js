@@ -1,15 +1,18 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const glob = require('@actions/glob');
 
 try {
-  // `who-to-greet` input defined in action metadata file
-  const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hello ${nameToGreet}!`);
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
-  // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`);
+  // Creates to globber to search through the repository for the JSON files
+  const patterns = ['**/json']
+  const globber = await glob.create(patterns.join('\n'))
+
+  // hopefully if this works right should iterate of the list of all the JSON files in the repository
+  for await (const file of globber.globGenerator()){
+    console.log(file)
+  }
+
+  // TODO: Save the MD files from the generator
 } catch (error) {
   core.setFailed(error.message);
 }
