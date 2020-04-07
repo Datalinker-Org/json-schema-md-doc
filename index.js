@@ -14,15 +14,16 @@ async function runMDGeneration(){
   const globber = await glob.create(patterns.join('\n'));
 
   var fileList = [];
+  var contents = "";
+
+  var reader = new FileReader();
 
   // hopefully if this works right should iterate of the list of all the JSON files in the repository
   for await (const file of globber.globGenerator()){
     fileList.push(file);
-
-    var reader = new FileReader();
     
     reader.onload = function(e) {
-      var contents = e.target.result;
+      contents = e.target.result;
     }
 
     reader.readAsText(file);
