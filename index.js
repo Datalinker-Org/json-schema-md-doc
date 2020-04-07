@@ -21,7 +21,7 @@ async function runMDGeneration(){
   for await (const file of globber.globGenerator()){
     fileList.push(file);
     
-    contents = await fs.readFile(file); 
+    contents = fs.readFile(file); 
     //fs.readFileSync(file);
   }
 
