@@ -18,9 +18,18 @@ async function runMDGeneration(){
   // hopefully if this works right should iterate of the list of all the JSON files in the repository
   for await (const file of globber.globGenerator()){
     fileList.push(file);
+
+    var reader = new FileReader();
+    
+    reader.onload = function(e) {
+      var contents = e.target.result;
+    }
+
+    reader.readAsText(file);
   }
 
-  core.setOutput("files", fileList.join('\n'))
+  core.setOutput("files", fileList.join('\n'));
+  core.setOutput("content", contents);
 
   // TODO: Save the MD files from the generator
 }

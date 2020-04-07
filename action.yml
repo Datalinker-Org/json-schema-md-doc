@@ -3,6 +3,8 @@ description: 'Read in the JSON schema files and generate MD documentation files 
 outputs:
   files:
     description: 'The list of found JSON files'
+  content:
+    description: 'The content of the last file read'
 runs:
   using: 'node12'
   main: 'index.js'
