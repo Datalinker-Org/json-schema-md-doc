@@ -31,7 +31,7 @@ async function runMDGeneration(){
   core.setOutput("files", fileList.join('\n'));
 
   try{
-    core.setOutput("content", contents);
+    core.setOutput("content", contents.toString());
   } catch (error) {
     core.setFailed(error.message);
   }
