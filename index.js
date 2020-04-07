@@ -1,9 +1,10 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const glob = require('@actions/glob');
+import { File, FileReader } from "@ionic-native/file"; 
 
 try {
-  var reader = new global.FileReader();;
+  var reader = new FileReader();;
   runMDGeneration();
 } catch (error) {
   core.setFailed(error.message);
