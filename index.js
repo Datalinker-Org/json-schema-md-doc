@@ -1,10 +1,9 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const glob = require('@actions/glob');
-import { File, FileReader } from "@ionic-native/file"; 
+const fs = require('fs')
 
 try {
-  var reader = new FileReader();;
   runMDGeneration();
 } catch (error) {
   core.setFailed(error.message);
@@ -22,11 +21,7 @@ async function runMDGeneration(){
   for await (const file of globber.globGenerator()){
     fileList.push(file);
     
-    reader.onload = function(e) {
-      contents = e.target.result;
-    }
-
-    reader.readAsText(file);
+    contents = fs.readFileSync(file);
   }
 
   core.setOutput("files", fileList.join('\n'));
