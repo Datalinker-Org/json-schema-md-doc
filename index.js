@@ -21,7 +21,11 @@ async function runMDGeneration(){
   for await (const file of globber.globGenerator()){
     fileList.push(file);
     
-    contents = fs.readFile(file); 
+    try{
+      contents = fs.readFile(file); 
+    } catch (error) {
+      core.setFailed(error.message);
+    }
     //fs.readFileSync(file);
   }
 
