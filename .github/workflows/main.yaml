@@ -14,3 +14,5 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the list of files
         run: echo "The files are ${{ steps.hello.outputs.files }}"
+      - name: display the file content
+        run: echo "The contents of the file is ${{ steps.hello.outputs.content }}"
