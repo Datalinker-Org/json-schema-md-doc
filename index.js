@@ -3,6 +3,7 @@ const github = require('@actions/github');
 const glob = require('@actions/glob');
 
 try {
+  var reader = new FileReader();
   runMDGeneration();
 } catch (error) {
   core.setFailed(error.message);
@@ -15,8 +16,6 @@ async function runMDGeneration(){
 
   var fileList = [];
   var contents = "";
-
-  var reader = new FileReader();
 
   // hopefully if this works right should iterate of the list of all the JSON files in the repository
   for await (const file of globber.globGenerator()){
