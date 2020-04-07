@@ -10,9 +10,9 @@ jobs:
         uses: actions/checkout@v2
       - name: Generate MD files Step
         uses: ./ # Uses an action in the root directory
-        id: hello
+        id: generate_file
       # Use the output from the `hello` step
       - name: Get the list of files
-        run: echo "The files are ${{ steps.hello.outputs.files }}"
+        run: echo "The files are ${{ steps.generate_file.outputs.files }}"
       - name: display the file content
-        run: echo "The contents of the file is ${{ steps.hello.outputs.content }}"
+        run: echo "The contents of the file is ${{ steps.generate_file.outputs.content }}"
