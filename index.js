@@ -3,7 +3,7 @@ const github = require('@actions/github');
 const glob = require('@actions/glob');
 
 try {
-  var reader = new window.FileReader;
+  var reader = new global.FileReader();;
   runMDGeneration();
 } catch (error) {
   core.setFailed(error.message);
