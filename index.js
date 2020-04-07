@@ -29,7 +29,12 @@ async function runMDGeneration(){
   }
 
   core.setOutput("files", fileList.join('\n'));
-  core.setOutput("content", contents);
+
+  try{
+    core.setOutput("content", contents);
+  } catch (error) {
+    core.setFailed(error.message);
+  }
 
   // TODO: Save the MD files from the generator
 }
