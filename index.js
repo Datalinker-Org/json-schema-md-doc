@@ -22,11 +22,10 @@ async function runMDGeneration(){
     fileList.push(file);
     
     try{
-      contents = fs.readFile(file); 
+      contents = fs.readFileSync(file); 
     } catch (error) {
       core.setFailed(error.message);
     }
-    //fs.readFileSync(file);
   }
 
   core.setOutput("files", fileList.join('\n'));
