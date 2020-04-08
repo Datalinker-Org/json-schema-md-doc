@@ -34,9 +34,6 @@ async function runMDGeneration(){
     Doc.generate();
     var markdown = Doc.markdown;
 
-    // TODO: Save the generated markdown files without causing the action to run again
-
-    // todo: take the file path and replace .json with .md
     var mdFile = file.toString().replace(".json", ".md");
 
     fileList.push(mdFile);
