@@ -39,9 +39,9 @@ async function runMDGeneration(){
     // todo: take the file path and replace .json with .md
     var mdFile = file.toString().replace(".json", ".md");
 
-    fs.writeFile(mdFile, markdown.toString(), function (err){
-      if(err) throw err;
-    });
+    fileList.push(mdFile);
+
+    fs.writeFileSync(mdFile, markdown);
   }
 
   core.setOutput("files", fileList.join('\n'));
