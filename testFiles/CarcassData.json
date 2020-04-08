@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "animalIdentifiers": {
+      "@id": "[AnimalIdentifier](Merits_Traits_and_Sessions/AnimalIdentifier.md)",
+      "@type": "@id",
+      "type": "array",
+      "items": { "type": "object" },
+      "@container": "@set",
+      "dldescription": "URN identifier of an externally meaningful ID such as birthTag,currentTag, birthHerdCode etc"
+    },
+    "carcassId": {
+      "@id": "[CarcassId](#CarcassId)",
+      "@type": "xsd:string",
+      "type": "string",
+      "dldescription": "Identifier assigned to carcass by processor"
+    },
+    "sex": {
+      "@id": "[Sex](#Sex)",
+      "@type": "xsd:string",
+      "type": "string",
+      "dldescription": "The gender or sex of the animal. This may be combined with state information to indicate the fertility status of the animal. Enumeration: M(Male), F(Female), NULL  for unknowns."
+    },
+    "fertilityStatus": {
+      "@id": "[FertilityStatus](#FertilityStatus)",
+      "@type": "xsd:string",
+      "type": "string",
+      "dldescription": "Indicates whether an animal is known to be fertile or not, or whether it has been partly or fully neutered. For instance, a neutered cattle male is a steer, a neutered sheep male is a wether. Females of both species can be spayed. An infertile male by comparison still has testes and responds as a male, and is frequently used as a 'teaser'. Enumeration: Fertile, Infertile, Neutered, Cryptorchid, Unknown"
+    },
+    "sides": {
+      "@id": "[CarcassSide](CarcassSide.md)",
+      "@type": "@id",
+      "type": "array",
+      "items": { "type": "object" },
+      "@container": "@set",
+      "dldescription": "The carcass 'side' as determined by the processor. An animal can therefore have multiple sides for the same carcass. For example, cattle carcasses are split into two individual sides with individual characteristics. Numbered from 0 - 3 where 0 = whole"
+    },
+    "weight": {
+      "@id": "[Weight](#Weight)",
+      "@type": "xsd:decimal",
+      "type": "number",
+      "dldescription": "Live animal weight prior to slaughter in kg. In this context, this weight typically includes the fresh liveweight recorded straight after removing from pasture, or the empty liveweight, recorded after a longer period when the stomach is empty"
+    },
+    "deadWeight": {
+      "@id": "[DeadWeight](#DeadWeight)",
+      "@type": "xsd:decimal",
+      "type": "number",
+      "dldescription": "Weight in kg of an animal before cutting"
+    },
+    "carcassGrade": {
+      "@id": "[CarcassGrade](#CarcassGrade)",
+      "@type": "xsd:string",
+      "type": "string",
+      "dldescription": "Pricing Category for carcass determined by Processor"
+    },
+    "grFatDepth": {
+      "@id": "[GrFatDepth](#GrFatDepth)",
+      "@type": "xsd:decimal",
+      "type": "number",
+      "dldescription": "Depth of fat in mm at the GR measurement site"
+    },
+    "fatGrade": {
+      "@id": "[FatGrade](#FatGrade)",
+      "@type": "xsd:string",
+      "type": "string",
+      "dldescription": "Species-specific coding of fat grade at plant"
+    },
+    "conformationGrade": {
+      "@id": "[ConformationGrade](#ConformationGrade)",
+      "@type": "xsd:string",
+      "type": "string",
+      "dldescription": "Species-specific coding of conformation at plant"
+    },
+    "meatColor": {
+      "@id": "[MeatColor](#MeatColor)",
+      "@type": "xsd:integer",
+      "type": "string",
+      "dldescription": "From 1 (pink) to 7 (dark maroon)"
+    },
+    "fatColor": {
+      "@id": "[FatColor](#FatColor)",
+      "@type": "xsd:integer",
+      "type": "string",
+      "dldescription": "From 1 (pure white) to 7 (creamy yellow)"
+    },
+    "marbling": {
+      "@id": "[Marbling](#Marbling)",
+      "@type": "xsd:integer",
+      "type": "string",
+      "dldescription": "Intramuscular fat score, from 1 (lean) to 7 (High marbling)"
+    },
+    "emaA": {
+      "@id": "[EmaA](#EmaA)",
+      "@type": "xsd:decimal",
+      "type": "number",
+      "dldescription": "Eye Muscle Dimension A (mm)"
+    },
+    "emaB": {
+      "@id": "[EmaB](#EmaB)",
+      "@type": "xsd:decimal",
+      "type": "number",
+      "dldescription": "Eye Muscle Dimension B (mm)"
+    },
+    "emaC": {
+      "@id": "[EmaC](#EmaC)",
+      "@type": "xsd:decimal",
+      "type": "number",
+      "dldescription": "Eye Muscle Dimension C (mm)"
+    },
+    "emaUltrasound": {
+      "@id": "[EmaUltrasound](#EmaUltrasound)",
+      "@type": "xsd:decimal",
+      "type": "number",
+      "dldescription": "Eye Muscle Area Ultrasound; in cm2"
+    },
+    "pH": {
+      "@id": "[pH](#pH)",
+      "@type": "xsd:decimal",
+      "type": "number",
+      "dldescription": "pH measurement"
+    },
+    "maturityAssessed": {
+      "@id": "[MaturityAssessed](#MaturityAssessed)",
+      "@type": "xsd:string",
+      "type": "string",
+      "dldescription": "URN identifier of an externally meaningful ID such as birthTag,currentTag, birthHerdCode etc"
+    },
+    "dentition": {
+      "@id": "[Dentition](#Dentition)",
+      "@type": "xsd:string",
+      "type": "string",
+      "dldescription": "Dentition of carcass. Valid values: NULL (Unknown),Lamb, Mutton, Two-tooth, Four-tooth, Six-tooth, Full-mouth"
+    },
+    "carcassYield": {
+      "@id": "[CarcassYield](CarcassYield.md)",
+      "@type": "@id",
+      "type": "object",
+      "dldescription": "Describes details about the meat yield"
+    },
+    "faults": {
+      "@id": "[CarcassFault](CarcassFault.md)",
+      "@type": "@id",
+      "type": "array",
+      "items": { "type": "object" },
+      "@container": "@set",
+      "dldescription": "Describes primary faults in the carcass assessed by the processor"
+    },
+    "assessments": {
+      "@id": "[CarcassAssessment](CarcassAssessment.md)",
+      "@type": "@id",
+      "type": "array",
+      "items": { "type": "object" },
+      "@container": "@set",
+      "dldescription": "Describes details about the carcass assessment"
+    }
+  }
+}
