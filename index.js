@@ -31,7 +31,8 @@ async function runMDGeneration(){
     }
 
     Doc.load(contents);
-    var markdown = Doc.generate();
+    Doc.generate();
+    var markdown = Doc.markdown;
   }
 
   core.setOutput("files", fileList.join('\n'));
