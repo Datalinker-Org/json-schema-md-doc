@@ -1,7 +1,8 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const glob = require('@actions/glob');
-const fs = require('fs')
+const fs = require('fs');
+const generator = require("./docs/lib/JSONSchemaMarkdown");
 
 try {
   runMDGeneration();
@@ -17,6 +18,8 @@ async function runMDGeneration(){
   var fileList = [];
   var contents = "test";
 
+  var Doc = new generator.JSONSchemaMarkdown();
+
   // hopefully if this works right should iterate of the list of all the JSON files in the repository
   for await (const file of globber.globGenerator()){
     fileList.push(file);
@@ -26,12 +29,15 @@ async function runMDGeneration(){
     } catch (error) {
       core.setFailed(error.message);
     }
+
+    Doc.load(contents);
+    var markdown = Doc.generate();
   }
 
   core.setOutput("files", fileList.join('\n'));
 
   try{
-    core.setOutput("content", contents.toString());
+    core.setOutput("content", markdown.toString());
   } catch (error) {
     core.setFailed(error.message);
   }
