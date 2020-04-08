@@ -33,6 +33,15 @@ async function runMDGeneration(){
     Doc.load(contents.toString());
     Doc.generate();
     var markdown = Doc.markdown;
+
+    // TODO: Save the generated markdown files without causing the action to run again
+
+    // todo: take the file path and replace .json with .md
+    var mdFile = file.toString().replace(".json", ".md");
+
+    fs.writeFile(mdFile, markdown.toString(), function (err){
+      if(err) throw err;
+    });
   }
 
   core.setOutput("files", fileList.join('\n'));
@@ -42,6 +51,4 @@ async function runMDGeneration(){
   } catch (error) {
     core.setFailed(error.message);
   }
-
-  // TODO: Save the MD files from the generator
 }
