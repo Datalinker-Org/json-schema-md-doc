@@ -63,3 +63,34 @@ class MyDoccer extends JSONSchemaMarkdown {
     }
 };
 ```
+
+## Running the Action
+You can run this as an action on your repository using the following:
+``` yml
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Generate MD files
+    steps:
+      # Generates the MD files witht he action
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Generate MD files Step
+        uses: Datalinker-Org/json-schema-md-doc@master
+        id: generate_file
+      # commits the updated MD files
+      - name: Commit files
+        run: |
+          echo ${{ github.ref }}
+          git add .
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "ci: Automated build push" -a | exit 0
+      - name: Push changes
+        if: github.ref == 'refs/heads/master'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+```
