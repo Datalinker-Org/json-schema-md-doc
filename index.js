@@ -30,7 +30,7 @@ async function runMDGeneration(){
       core.setFailed(error.message);
     }
 
-    Doc.load(contents);
+    Doc.load(contents.toString());
     Doc.generate();
     var markdown = Doc.markdown;
   }
